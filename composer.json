@@ -1,0 +1,24 @@
+{
+    "name": "alucas/iim-td2",
+    "description": "A  beautiful demo package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alucas\\td2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arthur",
+            "email": "arthurlucas92@orange.fr"
+        }
+    ],
+    "require": {
+        "php": ">= 8.0",
+        "symfony/var-dumper": "^4.0||^5.0||^6.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.10"
+    }
+}
