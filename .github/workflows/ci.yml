@@ -8,21 +8,21 @@ jobs:
   ci:
     runs-on: ubuntu-latest
 
-  startegy:
-    matrix:
-      php: [8.0, 8.1, 8.2]
+    strategy:
+      matrix:
+        php: [8.0, 8.1, 8.2]
 
-  steps:
-    - name: 'Init repository'
-      uses: actions/checkout@v3
-    - name: 'Setup PHP'
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ matrix.php }}
-        tools: composer 
-    - name: 'Install dependencies'
-      run: composer install
-    - name: 'Run test'
-      run: vendor/bin/phpunit tests
-    - name: 'Run phpstan'
-      run: vendor/bin/phpstan analyse src --level=max
+    steps:
+      - name: 'Init repository'
+        uses: actions/checkout@v3
+      - name : 'Setup PHP'
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer
+      - name: 'Install dependencies'
+        run: composer install
+      - name: 'Run tests'
+        run: vendor/bin/phpunit tests
+      - name: 'Run phpstan'
+        run: vendor/bin/phpstan analyse src --level=max
