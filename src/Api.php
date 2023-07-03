@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Alucas\td2;
 
-class Api 
+class Api
 {
     public function getRandNumber(): int
     {
-        return rand (0,100);
+        return rand(0, 100);
     }
 
     public function getDate(): \DateTime
